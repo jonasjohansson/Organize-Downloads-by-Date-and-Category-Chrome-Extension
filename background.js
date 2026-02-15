@@ -38,14 +38,28 @@ chrome.downloads.onDeterminingFilename.addListener(function(item, __suggest) {
     });
   }
 
-  chrome.storage.sync.get({ pattern: DEFAULT_PATTERN }, function(data) {
+  chrome.storage.sync.get({ pattern: DEFAULT_PATTERN, customRules: [] }, function(data) {
     var d = new Date();
     var day = ('0' + d.getDate()).slice(-2);
     var month = ('0' + (d.getMonth() + 1)).slice(-2);
     var year = d.getFullYear();
 
     var fileExtension = item.filename.split('.').pop().toLowerCase();
-    var category = extensionGroups.find(group => group.extensions.includes(fileExtension))?.folder || 'other';
+
+    // Check custom rules first (they override built-in categories)
+    var category = null;
+    for (var i = 0; i < data.customRules.length; i++) {
+      var exts = data.customRules[i].extensions.split(',').map(function(e) { return e.trim().toLowerCase(); });
+      if (exts.includes(fileExtension)) {
+        category = data.customRules[i].folder;
+        break;
+      }
+    }
+
+    // Fall back to built-in categories
+    if (!category) {
+      category = extensionGroups.find(group => group.extensions.includes(fileExtension))?.folder || 'other';
+    }
 
     var path = data.pattern
       .replace('{year}', year)

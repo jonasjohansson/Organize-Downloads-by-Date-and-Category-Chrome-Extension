@@ -3,8 +3,9 @@
 <head>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 300px; padding: 16px; font-family: system-ui, sans-serif; font-size: 13px; color: #333; }
+  body { width: 320px; padding: 16px; font-family: system-ui, sans-serif; font-size: 13px; color: #333; }
   h1 { font-size: 14px; margin-bottom: 12px; }
+  h2 { font-size: 13px; margin: 12px 0 6px; border-top: 1px solid #eee; padding-top: 12px; }
   label { display: block; font-weight: 600; margin-bottom: 4px; }
   input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-family: monospace; font-size: 13px; }
   input:focus { outline: none; border-color: #4285f4; }
@@ -17,6 +18,15 @@
   .saved { background: #34a853; }
   .tokens { margin-bottom: 12px; font-size: 11px; color: #666; }
   .tokens code { background: #eee; padding: 1px 4px; border-radius: 2px; }
+  .custom-rules { max-height: 200px; overflow-y: auto; margin-bottom: 8px; }
+  .rule { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; }
+  .rule input { flex: 1; padding: 5px 8px; font-size: 12px; }
+  .rule .ext { flex: 1.5; }
+  .rule .folder { flex: 1; }
+  .rule button { flex-shrink: 0; width: 24px; height: 28px; border: 1px solid #ddd; border-radius: 3px; background: #fff; cursor: pointer; font-size: 14px; color: #999; }
+  .rule button:hover { background: #fee; color: #c00; }
+  .add-rule { padding: 5px 10px; border: 1px dashed #ccc; border-radius: 3px; background: #fff; cursor: pointer; font-size: 12px; color: #666; margin-bottom: 12px; }
+  .add-rule:hover { background: #f5f5f5; }
 </style>
 </head>
 <body>
@@ -32,6 +42,11 @@
     <button data-pattern="{year}/{month}/{day}/{category}">year/mo/day/cat</button>
     <button data-pattern="{category}">category only</button>
   </div>
+
+  <h2>Custom Rules</h2>
+  <div class="custom-rules" id="rules"></div>
+  <button class="add-rule" id="addRule">+ Add rule</button>
+
   <button class="save" id="save">Save</button>
   <script src="popup.js"></script>
 </body>
