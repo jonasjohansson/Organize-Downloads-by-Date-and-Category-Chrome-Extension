@@ -1,9 +1,10 @@
-var DEFAULT_PATTERN = '{year}/{category}/{month}/{day}';
 var patternInput = document.getElementById('pattern');
 var preview = document.getElementById('preview');
 var saveBtn = document.getElementById('save');
 var rulesContainer = document.getElementById('rules');
 var addRuleBtn = document.getElementById('addRule');
+var refToggle = document.getElementById('refToggle');
+var refList = document.getElementById('refList');
 
 function updatePreview() {
   var d = new Date();
@@ -39,6 +40,20 @@ function getCustomRules() {
   });
   return rules;
 }
+
+// Built-in categories reference list
+extensionGroups.forEach(function(group) {
+  var item = document.createElement('div');
+  item.className = 'ref-item';
+  item.innerHTML = '<strong>' + group.folder + '</strong><br><span>' + group.extensions.join(', ') + '</span>';
+  refList.appendChild(item);
+});
+
+refToggle.addEventListener('click', function() {
+  var open = refList.style.display !== 'none';
+  refList.style.display = open ? 'none' : 'block';
+  refToggle.innerHTML = 'Built-in Categories <small>' + (open ? '&#9654;' : '&#9660;') + '</small>';
+});
 
 // Load saved settings
 chrome.storage.sync.get({ pattern: DEFAULT_PATTERN, customRules: [] }, function(data) {
