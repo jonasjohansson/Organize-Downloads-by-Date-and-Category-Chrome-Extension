@@ -22,9 +22,9 @@ chrome.downloads.onDeterminingFilename.addListener(function(item, __suggest) {
   }
 
   var d = new Date();
-  var day = ('0' + d.getUTCDate()).slice(-2);
-  var month = ('0' + (d.getUTCMonth() + 1)).slice(-2); // index starts at 0, so we have to add 1
-  var year = d.getUTCFullYear();
+  var day = ('0' + d.getDate()).slice(-2);
+  var month = ('0' + (d.getMonth() + 1)).slice(-2); // index starts at 0, so we have to add 1
+  var year = d.getFullYear();
 
   // Get the file extension
   var fileExtension = item.filename.split('.').pop().toLowerCase();

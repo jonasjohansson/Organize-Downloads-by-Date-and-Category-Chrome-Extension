@@ -1,7 +1,7 @@
 {
     "name": "Organize Downloads by Date and Category",
-    "description": "Organizes your download folder by date and category. Example: YEAR/MONTH/DAY/CATEGORY/FILE",
-    "version": "1.0",
+    "description": "Organizes your download folder by date and category. Example: YEAR/CATEGORY/MONTH/DAY/FILE",
+    "version": "1.1",
     "permissions": [
         "downloads",
         "storage"
