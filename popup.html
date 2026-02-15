@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 300px; padding: 16px; font-family: system-ui, sans-serif; font-size: 13px; color: #333; }
+  h1 { font-size: 14px; margin-bottom: 12px; }
+  label { display: block; font-weight: 600; margin-bottom: 4px; }
+  input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-family: monospace; font-size: 13px; }
+  input:focus { outline: none; border-color: #4285f4; }
+  .preview { margin: 8px 0 12px; padding: 8px; background: #f5f5f5; border-radius: 4px; font-family: monospace; font-size: 12px; word-break: break-all; }
+  .presets { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+  .presets button { padding: 4px 8px; border: 1px solid #ddd; border-radius: 3px; background: #fff; font-family: monospace; font-size: 11px; cursor: pointer; }
+  .presets button:hover { background: #e8e8e8; }
+  .save { width: 100%; padding: 8px; background: #4285f4; color: #fff; border: none; border-radius: 4px; font-size: 13px; cursor: pointer; }
+  .save:hover { background: #3367d6; }
+  .saved { background: #34a853; }
+  .tokens { margin-bottom: 12px; font-size: 11px; color: #666; }
+  .tokens code { background: #eee; padding: 1px 4px; border-radius: 2px; }
+</style>
+</head>
+<body>
+  <h1>Folder Structure</h1>
+  <div class="tokens">Tokens: <code>{year}</code> <code>{month}</code> <code>{day}</code> <code>{category}</code></div>
+  <label>Pattern</label>
+  <input type="text" id="pattern" spellcheck="false">
+  <div class="preview" id="preview"></div>
+  <label>Presets</label>
+  <div class="presets">
+    <button data-pattern="{year}/{category}/{month}/{day}">year/cat/mo/day</button>
+    <button data-pattern="{category}/{year}/{month}/{day}">cat/year/mo/day</button>
+    <button data-pattern="{year}/{month}/{day}/{category}">year/mo/day/cat</button>
+    <button data-pattern="{category}">category only</button>
+  </div>
+  <button class="save" id="save">Save</button>
+  <script src="popup.js"></script>
+</body>
+</html>
