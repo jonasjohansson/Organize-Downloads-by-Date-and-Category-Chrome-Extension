@@ -14,23 +14,7 @@ Automatically organizes your downloads into folders by category and date.
 
 ## Categories
 
-| Folder | Extensions |
-|---|---|
-| image | jpg, png, gif, svg, webp, psd, raw, heic, avif... |
-| video | mp4, mkv, avi, mov, webm, flv... |
-| audio | mp3, wav, ogg, flac, aac, m4a... |
-| apps | exe, dmg, msi, deb, pkg, apk... |
-| text | pdf, doc, docx, txt, md, rtf, epub... |
-| spreadsheet | xls, xlsx, csv, ods, numbers... |
-| presentation | ppt, pptx, odp, key |
-| archive | zip, rar, 7z, tar, gz, iso... |
-| code | js, ts, py, java, c, cpp, go, rs... |
-| web | html, css, json, xml, yaml, sql... |
-| font | ttf, otf, woff, woff2... |
-| model | obj, fbx, stl, blend, gltf... |
-| torrent | torrent |
-| system | dll, so, dylib, bin... |
-| other | everything else |
+15 built-in categories: image, video, audio, apps, text, spreadsheet, presentation, archive, code, web, font, 3D model, torrent, system, and other. Over 150 file extensions supported.
 
 ## Folder Structure
 
