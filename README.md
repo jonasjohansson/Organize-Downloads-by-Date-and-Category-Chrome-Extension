@@ -4,7 +4,7 @@ Automatically organizes your downloads into folders by category and date.
 
 **Before:** `Downloads/photo.jpg`
 
-**After:** `Downloads/2026/image/02/15/photo.jpg`
+**After:** `Downloads/2026/image/photo.jpg`
 
 ## Features
 
@@ -14,11 +14,11 @@ Automatically organizes your downloads into folders by category and date.
 
 ## Categories
 
-15 built-in categories: image, video, audio, apps, text, spreadsheet, presentation, archive, code, web, font, 3D model, torrent, system, and other. Over 150 file extensions supported.
+15 built-in categories: image, video, audio, installer, text, spreadsheet, presentation, archive, code, web, font, 3D model, design, torrent, system, and other. Over 150 file extensions supported.
 
 ## Folder Structure
 
-Default: `YEAR/CATEGORY/MONTH/DAY/FILE`
+Default: `YEAR/CATEGORY/FILE`
 
 Click the extension icon to customize. Available tokens: `{year}`, `{month}`, `{day}`, `{category}`
 
@@ -44,16 +44,16 @@ Original extension by [Lucas Bustamante](https://github.com/Luc45/Organize-Downl
 Automatically organizes your downloads into folders by category and date.
 
 Before: Downloads/photo.jpg
-After: Downloads/2026/image/02/15/photo.jpg
+After: Downloads/2026/image/photo.jpg
 
 Features:
 - 14 file categories with 150+ file extensions supported
 - Customizable folder structure (click the extension icon)
 - Works silently in the background
 
-Categories: image, video, audio, apps, text, spreadsheet, presentation, archive, code, web, font, 3D model, torrent, system, and other.
+Categories: image, video, audio, installer, text, spreadsheet, presentation, archive, code, web, font, 3D model, design, torrent, system, and other.
 
-Default folder structure: YEAR/CATEGORY/MONTH/DAY/FILE
+Default folder structure: YEAR/CATEGORY/FILE
 Customize using tokens: {year}, {month}, {day}, {category}
 
 This extension is open-source and available on GitHub:
