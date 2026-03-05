@@ -35,7 +35,7 @@
 </head>
 <body>
   <h1>Folder Structure</h1>
-  <div class="tokens">Tokens: <code>{year}</code> <code>{month}</code> <code>{day}</code> <code>{category}</code></div>
+  <div class="tokens">Tokens: <code>{year}</code> <code>{month}</code> <code>{day}</code> <code>{category}</code> <code>{extension}</code></div>
   <label>Pattern</label>
   <input type="text" id="pattern" spellcheck="false">
   <div class="preview" id="preview"></div>
@@ -45,6 +45,7 @@
     <button data-pattern="{category}/{year}/{month}/{day}">cat/year/mo/day</button>
     <button data-pattern="{year}/{month}/{day}/{category}">year/mo/day/cat</button>
     <button data-pattern="{category}">category only</button>
+    <button data-pattern="{year}/{extension}">year/ext</button>
   </div>
 
   <h2>Custom Rules</h2>

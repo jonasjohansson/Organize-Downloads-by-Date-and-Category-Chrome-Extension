@@ -47,7 +47,8 @@ chrome.downloads.onDeterminingFilename.addListener(function(item, __suggest) {
       .replace('{year}', year)
       .replace('{month}', month)
       .replace('{day}', day)
-      .replace('{category}', category);
+      .replace('{category}', category)
+      .replace('{extension}', fileExtension);
 
     suggest(path + '/' + item.filename, 'uniquify');
   });

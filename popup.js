@@ -12,7 +12,8 @@ function updatePreview() {
     .replace('{year}', d.getFullYear())
     .replace('{month}', ('0' + (d.getMonth() + 1)).slice(-2))
     .replace('{day}', ('0' + d.getDate()).slice(-2))
-    .replace('{category}', 'image');
+    .replace('{category}', 'image')
+    .replace('{extension}', 'jpg');
   preview.textContent = example + '/photo.jpg';
 }
 
