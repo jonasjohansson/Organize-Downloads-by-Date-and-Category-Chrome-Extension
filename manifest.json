@@ -1,10 +1,9 @@
 {
-    "name": "Organize Downloads by Date and Category",
-    "description": "Automatically organizes downloads into folders by category and date. Customizable folder structure.",
-    "version": "1.2.1",
+    "name": "Organize Downloads by Extension",
+    "description": "Automatically organizes downloads into folders by year and file extension.",
+    "version": "2.0.0",
     "permissions": [
-        "downloads",
-        "storage"
+        "downloads"
     ],
     "background": {
         "service_worker": "background.js"

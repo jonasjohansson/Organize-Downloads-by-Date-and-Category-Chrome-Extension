@@ -3,62 +3,15 @@
 <head>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 320px; padding: 16px; font-family: system-ui, sans-serif; font-size: 13px; color: #333; }
-  h1 { font-size: 14px; margin-bottom: 12px; }
-  h2 { font-size: 13px; margin: 12px 0 6px; border-top: 1px solid #eee; padding-top: 12px; }
-  label { display: block; font-weight: 600; margin-bottom: 4px; }
-  input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-family: monospace; font-size: 13px; }
-  input:focus { outline: none; border-color: #4285f4; }
-  .preview { margin: 8px 0 12px; padding: 8px; background: #f5f5f5; border-radius: 4px; font-family: monospace; font-size: 12px; word-break: break-all; }
-  .presets { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
-  .presets button { padding: 4px 8px; border: 1px solid #ddd; border-radius: 3px; background: #fff; font-family: monospace; font-size: 11px; cursor: pointer; }
-  .presets button:hover { background: #e8e8e8; }
-  .save { width: 100%; padding: 8px; background: #4285f4; color: #fff; border: none; border-radius: 4px; font-size: 13px; cursor: pointer; }
-  .save:hover { background: #3367d6; }
-  .saved { background: #34a853; }
-  .tokens { margin-bottom: 12px; font-size: 11px; color: #666; }
-  .tokens code { background: #eee; padding: 1px 4px; border-radius: 2px; }
-  .custom-rules { max-height: 200px; overflow-y: auto; margin-bottom: 8px; }
-  .rule { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; }
-  .rule input { flex: 1; padding: 5px 8px; font-size: 12px; }
-  .rule .ext { flex: 1.5; }
-  .rule .folder { flex: 1; }
-  .rule button { flex-shrink: 0; width: 24px; height: 28px; border: 1px solid #ddd; border-radius: 3px; background: #fff; cursor: pointer; font-size: 14px; color: #999; }
-  .rule button:hover { background: #fee; color: #c00; }
-  .add-rule { padding: 5px 10px; border: 1px dashed #ccc; border-radius: 3px; background: #fff; cursor: pointer; font-size: 12px; color: #666; margin-bottom: 12px; }
-  .add-rule:hover { background: #f5f5f5; }
-  .ref-list { max-height: 200px; overflow-y: auto; margin-bottom: 12px; }
-  .ref-item { margin-bottom: 6px; }
-  .ref-item strong { font-size: 12px; }
-  .ref-item span { font-size: 11px; color: #666; font-family: monospace; word-break: break-all; }
+  body { width: 280px; padding: 16px; font-family: system-ui, sans-serif; font-size: 13px; color: #333; }
+  h1 { font-size: 14px; margin-bottom: 8px; }
+  p { color: #666; line-height: 1.4; }
+  .example { margin-top: 10px; padding: 8px; background: #f5f5f5; border-radius: 4px; font-family: monospace; font-size: 12px; }
 </style>
 </head>
 <body>
-  <h1>Folder Structure</h1>
-  <div class="tokens">Tokens: <code>{year}</code> <code>{month}</code> <code>{day}</code> <code>{category}</code> <code>{extension}</code></div>
-  <label>Pattern</label>
-  <input type="text" id="pattern" spellcheck="false">
-  <div class="preview" id="preview"></div>
-  <label>Presets</label>
-  <div class="presets">
-    <button data-pattern="{year}/{category}/{month}/{day}">year/cat/mo/day</button>
-    <button data-pattern="{category}/{year}/{month}/{day}">cat/year/mo/day</button>
-    <button data-pattern="{year}/{month}/{day}/{category}">year/mo/day/cat</button>
-    <button data-pattern="{category}">category only</button>
-    <button data-pattern="{year}/{extension}">year/ext</button>
-  </div>
-
-  <h2>Custom Rules</h2>
-  <div class="custom-rules" id="rules"></div>
-  <button class="add-rule" id="addRule">+ Add rule</button>
-
-  <h2>
-    <span id="refToggle" style="cursor:pointer">Built-in Categories <small>&#9654;</small></span>
-  </h2>
-  <div id="refList" style="display:none" class="ref-list"></div>
-
-  <button class="save" id="save">Save</button>
-  <script src="categories.js"></script>
-  <script src="popup.js"></script>
+  <h1>Organize Downloads by Extension</h1>
+  <p>Downloads are automatically sorted into folders by year and file extension.</p>
+  <div class="example">photo.jpg &rarr; 2026/jpg/photo.jpg<br>song.mp3 &rarr; 2026/mp3/song.mp3<br>doc.pdf &rarr; 2026/pdf/doc.pdf</div>
 </body>
 </html>
